@@ -1,0 +1,9 @@
+.song-list {
+  list-style-type: none;
+  display: flex;
+  flex-flow: column wrap;
+  width: 100%;
+  justify-content: center;
+  background-color: #000000;
+  margin-top: 0;
+}
