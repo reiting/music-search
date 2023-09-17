@@ -1,12 +1,43 @@
 .App-header {
-  width: 100vw;
-  pointer-events: none;
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  color: #ffffff;
+  text-align: center;
+  height: 250px;
+  margin-bottom: 1rem;
+  background-image: url('./assets/yousician-hero.png');
 }
 
-.input {
+.header-info {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  color: white;
+}
+
+.input-container {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  margin-top: -3%;
+}
+
+.search-input {
+  position: relative;
+  width: 34rem;
+  border-radius: 25px;
+  border: 1px solid white;
+  height: 20px;
+  margin-left: 1rem;
+  padding: 0.4rem;
+  text-align: center;
+}
+
+.search-icon {
+  position: relative;
+  top: 2px;
+  width: 12px;
+  margin-left: -3rem;
 }
