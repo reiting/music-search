@@ -1,9 +1,15 @@
 .song-list {
-  list-style-type: none;
-  display: flex;
-  flex-flow: column wrap;
-  width: 100%;
-  justify-content: center;
+    display: grid;
+    color: white;
+    /* grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+    grid-gap: 1.5rem;
+    justify-items: center; */
+    margin: 0;
+    padding: 0;
+}
+
+.filter {
   background-color: #000000;
-  margin-top: 0;
+  color: white;
+  float: right;
 }

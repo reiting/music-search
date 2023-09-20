@@ -1,30 +1,32 @@
-.song {
-  display: flex;
-  flex-flow: row nowrap;
-}
+ .song {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   padding-left: 15rem;
+ }
 
-img {
-  height: 60px;
-  width: 60px;
-  min-width: 60px;
-  margin: 10px;
-}
+ .album-image {
+   display: grid;
+   grid-auto-flow: column;
+   height: 60px;
+   width: 60px;
+ }
 
-.song-info {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  margin-left: 20px;
-  width: 80%;
-}
+ .song-info {
+   display: grid;
+   grid-auto-flow: column;
+   grid-column: 2;
+   width: 50px;
+ }
 
-.song-text {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  margin-bottom: 0;
-  color: white;
-}
+ .level-info {
+   display: grid;
+   grid-auto-flow: column;
+   height: 80px;
+   width: 80px;
+ }
 
-
-   
+ .favorite-button {
+   background-color: #000000;
+   border: 0;
+   flex: 10%;
+ }
