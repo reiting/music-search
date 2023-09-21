@@ -1,32 +1,48 @@
  .song {
    display: grid;
-   grid-template-columns: repeat(3, 1fr);
    padding-left: 15rem;
+   grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
+
  }
 
  .album-image {
    display: grid;
    grid-auto-flow: column;
+   align-self: center;
    height: 60px;
    width: 60px;
  }
 
  .song-info {
-   display: grid;
+   /* display: grid;
    grid-auto-flow: column;
    grid-column: 2;
-   width: 50px;
+   width: 60rem;
+   margin-top: 0 */
  }
 
  .level-info {
-   display: grid;
-   grid-auto-flow: column;
+   /* display: grid;
+   grid-auto-flow: column; */
+   justify-self: end;
    height: 80px;
    width: 80px;
+   
  }
 
  .favorite-button {
+   display: grid;
    background-color: #000000;
    border: 0;
-   flex: 10%;
+   justify-self: center;
+   align-self: center;
+ }
+
+ .heart-icon {
+   height: 2rem;
+ }
+
+ .song-title {
+   margin-bottom: 0;
+   margin-top: 1rem;
  }

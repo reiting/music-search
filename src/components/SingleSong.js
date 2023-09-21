@@ -41,7 +41,7 @@ const SingleSong = ({ song, isDark }) => {
         <img className='album-image' src={images} alt='artist album cover' />
       </div>
       <div className='song-info'>
-        <h4 className='song-info'>{title}</h4>
+        <h4 className='song-info song-title'>{title}</h4>
         <p className='song-info'>{artist}</p>
       </div>
       <div className='level-info'>
@@ -68,9 +68,9 @@ const SingleSong = ({ song, isDark }) => {
           />
         </CircularProgressbarWithChildren>
       </div>
-      {/* <button className='favorite-button' onClick={handleClick}>
-        <img src={favoriteBtn} alt='heart button' />
-      </button> */}
+      <button className='favorite-button' onClick={handleClick}>
+        <img src={favoriteBtn} alt='heart button' className='heart-icon' />
+      </button>
     </li>
   )
 }

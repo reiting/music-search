@@ -1,9 +1,6 @@
 .song-list {
     display: grid;
     color: white;
-    /* grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
-    grid-gap: 1.5rem;
-    justify-items: center; */
     margin: 0;
     padding: 0;
 }
