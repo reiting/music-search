@@ -5,30 +5,52 @@ import Songs from './components/Songs';
 import Filter from './components/Filter';
 
 function App() {
-  const [searchTerm, setSearchTerm] = useState("")
-  const [songs, setSongs] = useState([])
+  const [search, setSearch] = useState({
+    searchTerm: '',
+    songs: []
+  })
+  const [allSongs, setAllSongs] = useState([])
+  const [loading, setLoading] = useState(false)
+
+  const handleChange = (e) => {
+    const results = allSongs.filter(song => {
+        if (e.target.value === "") return search.songs
+        return song.title.toLowerCase().includes(e.target.value.toLowerCase() || song.artist.toLowerCase().includes(e.target.value.toLowerCase()))
+    })
+    setSearch({
+        searchTerm: e.target.value,
+        songs: results
+    })
+}
 
   async function fetchData() {
+    setLoading(true)
     try {
       const response = await axios.get('http://localhost:3004/songs');
-      setSongs(response.data);
+      setAllSongs(response.data);
+      setSearch({songs: response.data})
+      setLoading(false)
     } catch (error) {
       console.error('Error:', error)
+      setLoading(false)
     }
   }
   useEffect(() => {
     fetchData();
   }, []);
 
-  const handleSearchChange = e => {
-    setSearchTerm(e.target.value);
-  };
+  // const handleSearchChange = e => {
+  //   setSearchTerm(e.target.value);
+  //   // let newSongs = songs.filter(song =>
+  //   //   song.title.toLowerCase().includes(searchTerm.toLowerCase()) || song.artist.toLowerCase().includes(searchTerm.toLowerCase()))
+  //   // setSongs(newSongs)
+  // };
 
-  const handleSearch = () => {
-    const newSongs = songs.filter(song =>
-      song.title.toLowerCase().includes(searchTerm.toLowerCase()) || song.artist.toLowerCase().includes(searchTerm.toLowerCase()))
-    setSongs(newSongs)
-  }
+  // const handleSearch = () => {
+  //   const newSongs = songs.filter(song =>
+  //     song.title.toLowerCase().includes(search.searchTerm.toLowerCase()) || song.artist.toLowerCase().includes(search.searchTerm.toLowerCase()))
+  //   setSongs(newSongs)
+  // }
 
   return (
     <div>
@@ -42,15 +64,15 @@ function App() {
             type='text'
             placeholder='Search for songs by artist or title'
             className='search-input'
-            onChange={handleSearchChange}
-            value={searchTerm || ''}
-            aria-label='search' />
-          <div className='search-icon' onClick={handleSearch} />
+            onChange={handleChange}
+            value={search.searchTerm || ''}
+            aria-label='search'
+          />
         </div>
       </header>
       <div>
-        <Filter songs={songs} setSongs={setSongs}/>
-        <Songs songs={songs} />
+        <Filter songs={search.songs} setSongs={setSearch} />
+        <Songs songs={search.songs} loading={loading} />
       </div>
     </div>
   );

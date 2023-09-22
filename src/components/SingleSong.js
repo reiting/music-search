@@ -2,24 +2,26 @@ import './SingleSong.css'
 import axios from 'axios';
 import whiteFavoriteButton from '../assets/icons/favorite_white.svg';
 import redFavoriteButton from '../assets/icons/favorite_red.svg';
-import { useState } from 'react';
 import {
   CircularProgressbarWithChildren,
   buildStyles
 } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import RadialSeparators from './RadialSeparators';
-
+import { useState } from 'react';
 
 const SingleSong = ({ song, isDark }) => {
   const { id, title, images, artist, level } = song;
-  const [favoriteBtn, setFavoriteBtn] = useState(whiteFavoriteButton)
+  const [favoriteButtonImg, setFavoriteButtonImg] = useState(whiteFavoriteButton)
 
-  
   const handleClick = async () => {
     try {
       await axios.post('http://localhost:3004/favorites', { 'songId': id })
-      setFavoriteBtn(redFavoriteButton)
+      if(favoriteButtonImg === whiteFavoriteButton) {
+        setFavoriteButtonImg(redFavoriteButton)
+      } else {
+        setFavoriteButtonImg(whiteFavoriteButton)
+      }
     } catch (error) {
       console.error('Error:', error)
     }
@@ -69,7 +71,7 @@ const SingleSong = ({ song, isDark }) => {
         </CircularProgressbarWithChildren>
       </div>
       <button className='favorite-button' onClick={handleClick}>
-        <img src={favoriteBtn} alt='heart button' className='heart-icon' />
+        <img src={favoriteButtonImg} alt='heart button' className='heart-icon' />
       </button>
     </li>
   )

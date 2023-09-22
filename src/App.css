@@ -15,25 +15,25 @@ body {
 .input-container {
   width: 100%;
   text-align: center;
+  position: relative;
+}
+
+.input-container img {
+  position: fixed;
+  float: right;
 }
 
 .search-input {
   position: relative;
   width: 34rem;
   border-radius: 25px;
-  border: 1px solid white;
+  border: 1px solid #ffffff;
   height: 20px;
   margin-left: 1rem;
   padding: 0.4rem;
   text-align: center;
-}
-
-.search-icon {
-  position: relative;
-  height: 16px;
-  width: 16px;
-  padding: 5px;
-  margin: 12px 20px;
-  background: url('./assets/icons/search.svg') center center / cover no-repeat;
-  cursor: pointer;
+  background: url('./assets/icons/search.svg');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-color: #ffffff;
 }

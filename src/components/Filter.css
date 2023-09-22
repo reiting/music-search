@@ -3,19 +3,27 @@
   justify-content: end;
   grid-auto-flow: column;
   grid-template-columns: repeat(auto-fit, minmax(min(0, 100%), 1fr));
-
 }
+
 .numbers {
   display: grid;
   justify-content: end;
 }
 
 .filter-icon {
-  background-color: white;
-  margin-top: 1rem;
+  border: #000000 solid .15rem;
   height: 1.5rem;
   width: 1.5rem;
   border-radius: 50%;
+  background-color: #ffffff;
+}
+
+.white-filter-icon {
+  border: #ffffff solid .15rem;
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 50%;
+  background-color: #000000
 }
 
 .search-button {
@@ -51,6 +59,8 @@
 .filter-button {
   display: grid;
   grid-auto-flow: column;
+  font-size: .7rem;
+  font-weight: bold;
 }
 
 .progress-button {
@@ -68,3 +78,14 @@
   grid-area: 1/1;
 }
 
+.flex-button {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  border: #ffffff solid;
+  border-radius: 25%;
+}
+
+.level-number {
+  color: #ffffff;
+}

@@ -1,12 +1,12 @@
 .song-list {
-    display: grid;
-    color: white;
-    margin: 0;
-    padding: 0;
+  display: grid;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
 }
 
 .filter {
   background-color: #000000;
-  color: white;
+  color: #ffffff;
   float: right;
 }

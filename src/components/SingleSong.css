@@ -2,7 +2,6 @@
    display: grid;
    padding-left: 15rem;
    grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
-
  }
 
  .album-image {
@@ -13,17 +12,7 @@
    width: 60px;
  }
 
- .song-info {
-   /* display: grid;
-   grid-auto-flow: column;
-   grid-column: 2;
-   width: 60rem;
-   margin-top: 0 */
- }
-
  .level-info {
-   /* display: grid;
-   grid-auto-flow: column; */
    justify-self: end;
    height: 80px;
    width: 80px;
